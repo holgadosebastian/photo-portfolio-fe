@@ -1,33 +1,21 @@
 import './tailwind.output.css';
 import Container from './components/container'
 import Picture from './components/picture'
-import Grid from './components/grid'
+import PictureList from './components/picture/pictureList'
+
+import Query from "./components/query";
+import PICTURES_QUERY from "./queries/picture/pictures";
 
 function App() {
   return (
     <Container>
-      <Picture />
+      <Query query={PICTURES_QUERY} id={null}>
+        {({ data: { pictures } }) => {
+          return <Picture image={pictures[0].mainImage.url} />
+        }}
+      </Query>
 
-      <Grid>
-        <Grid.Column>
-          <Picture shape="square"/>
-        </Grid.Column>
-        <Grid.Column>
-          <Picture shape="square"/>
-        </Grid.Column>
-        <Grid.Column>
-          <Picture shape="square"/>
-        </Grid.Column>
-        <Grid.Column>
-          <Picture shape="square"/>
-        </Grid.Column>
-        <Grid.Column>
-          <Picture shape="square"/>
-        </Grid.Column>
-        <Grid.Column>
-          <Picture shape="square"/>
-        </Grid.Column>
-      </Grid>
+      <PictureList />
     </Container>
   );
 }
