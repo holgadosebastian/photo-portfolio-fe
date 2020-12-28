@@ -1,22 +1,29 @@
-import './tailwind.output.css';
-import Container from './components/container'
-import Picture from './components/picture'
-import PictureList from './components/picture/pictureList'
+import React, { Fragment } from 'react'
+import {
+  Switch,
+  Route
+} from 'react-router-dom';
 
-import Query from "./components/query";
-import PICTURES_QUERY from "./queries/picture/pictures";
+import './tailwind.output.css';
+import Home from './pages/home'
+import SinglePicture from './pages/singlePicture'
+import SingleTag from './pages/singleTag'
+import AllTags from './pages/allTags'
+import NavBar from './layout/navBar'
+
 
 function App() {
   return (
-    <Container>
-      <Query query={PICTURES_QUERY} id={null}>
-        {({ data: { pictures } }) => {
-          return <Picture image={pictures[0].mainImage.url} />
-        }}
-      </Query>
-
-      <PictureList />
-    </Container>
+    <Fragment>
+      <NavBar />
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/picture/:id' component={SinglePicture} />
+        <Route exact path='/tag/:id' component={SingleTag} />
+        <Route exact path='/all-tags' component={AllTags} />
+      </Switch>
+    </Fragment>
+    
   );
 }
 

@@ -7,6 +7,9 @@ module.exports = {
     'public/**/*.html',
   ],
   theme: {
+    fontFamily: {
+      'sans': ['Noto Sans JP', 'ui-sans-serif', 'system-ui'],
+    },
     extend: {
       spacing: {
         '50p': "50%",

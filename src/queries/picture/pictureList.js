@@ -1,6 +1,6 @@
 import gql from "graphql-tag";
 
-const PICTURES_QUERY = gql`
+const PICTURES_LIST_QUERY = gql`
   query Pictures {
     pictures {
       id
@@ -12,4 +12,4 @@ const PICTURES_QUERY = gql`
   }
 `;
 
-export default PICTURES_QUERY;
+export default PICTURES_LIST_QUERY;
