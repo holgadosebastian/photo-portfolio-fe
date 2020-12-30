@@ -19,7 +19,7 @@ const Hero = ({ image, title, subtitle, to, className, ...props }) => {
       <Picture className="w-full" image={image} centered />
       <Container className="flex items-center relative z-10 h-48">
         <Grid>
-          <Grid.Column span={6}>
+          <Grid.Column span={{ xs: 6 }}>
             <Hdn size={2} weight="bold">{title}</Hdn>
             <Hdn size={3}>{subtitle}</Hdn>
           </Grid.Column>

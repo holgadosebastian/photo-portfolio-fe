@@ -5,6 +5,10 @@ const PICTURE_QUERY = gql`
     picture(id: $id) {
       id
       title
+      description
+      place
+      region
+      dateTaken
       mainImage {
         url
       }

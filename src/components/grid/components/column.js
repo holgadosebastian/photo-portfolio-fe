@@ -7,14 +7,14 @@ const GridColumn = ({ span, className, children }) => {
       [`w-${span.xs}/12`]: span.xs,
       [`sm:w-${span.md}/12`]: span.md,
       [`lg:w-${span.lg}/12`]: span.lg,
-    })} style={{ width: `${100 * span / 12}%` }}>
+    })}>
       {children}
     </div>
   )
 }
 
 GridColumn.defaultProps = {
-  span: { xs: 12, md: 12, lg: 12 },
+  span: { xs: 12 },
 }
 
 export default GridColumn

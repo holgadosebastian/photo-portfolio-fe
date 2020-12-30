@@ -29,8 +29,8 @@ const PictureList = ({ pictures, ...props }) => {
   return (
     <Fragment>
       <Tabs>
-        <Tabs.Tab name="Grid" active={displayType === 'grid'} icon="th" onClick={() => setDisplayType('grid')} />
-        <Tabs.Tab name="List" active={displayType === 'list'} icon="list" onClick={() => setDisplayType('list')} />
+        <Tabs.Tab active={displayType === 'grid'} icon="th" onClick={() => setDisplayType('grid')} />
+        <Tabs.Tab active={displayType === 'list'} icon="list" onClick={() => setDisplayType('list')} />
       </Tabs>
       <Grid {...props}>
         {pictures.map(picture => {
