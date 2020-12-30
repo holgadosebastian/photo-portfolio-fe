@@ -1,10 +1,7 @@
 import React from 'react'
 
 import Container from '../components/container'
-import Hero from '../components/hero'
 import Hdn from '../components/heading'
-
-
 
 const Styleguide = () => {
   return (
