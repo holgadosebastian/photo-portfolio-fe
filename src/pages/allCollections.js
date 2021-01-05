@@ -10,15 +10,20 @@ const AllCollections = () => {
   return (
     <Container>
       <Query query={ALL_COLLECTIONS_QUERY}>
-        {({ data: { collections } }) => collections.map(collection => (
-          <Hero
-            key={collection.id}
-            to={`/collection/${collection.id}`}
-            title={collection.title}
-            image={collection.image.url} 
-          />
-        ))
-        }
+        {({ data: { collections } }) => collections.map(collection => {
+          console.log(collection)
+          const otherImages = collection.pictures.map(picture => picture.mainImage.url )
+          
+          return (
+            <Hero
+              key={collection.id}
+              to={`/collection/${collection.id}`}
+              title={collection.title}
+              image={collection.image.url}
+              otherImages={otherImages}
+            />
+          )
+        })}
       </Query>
     </Container>
   )

@@ -9,6 +9,11 @@ const ALL_COLLECTIONS_QUERY = gql`
       image {
         url
       }
+      pictures(limit: 2) {
+        mainImage {
+          url
+        }
+      }
     }
   }
 `;

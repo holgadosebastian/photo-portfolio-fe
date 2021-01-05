@@ -7,8 +7,10 @@ import Hdn from '../heading'
 import Container from '../container'
 import Grid from '../grid'
 
-const Hero = ({ image, title, subtitle, to, className, ...props }) => {
+const Hero = ({ image, title, subtitle, to, otherImages, className, ...props }) => {
   const Elem = to ? Link : 'div'
+
+  console.log(otherImages)
 
   return (
     <Elem
@@ -17,6 +19,18 @@ const Hero = ({ image, title, subtitle, to, className, ...props }) => {
       {...props}
     >
       <Picture className="w-full" image={image} centered />
+      {otherImages.map((image, index) => (
+        <Picture
+          key={image}
+          className={classnames('absolute', 'right-0', 'w-1/4', {
+            'top-0': index === 0,
+            'bottom-0': index === 1,
+          })}
+          style={{ height: '50%' }}
+          image={image}
+          centered
+        />
+      ))}
       <Container className="flex items-center relative z-10 h-48">
         <Grid>
           <Grid.Column span={{ xs: 6 }}>
@@ -27,6 +41,10 @@ const Hero = ({ image, title, subtitle, to, className, ...props }) => {
       </Container>
     </Elem>
   )
+}
+
+Hero.defaultProps = {
+  otherImages: [],
 }
 
 export default Hero
