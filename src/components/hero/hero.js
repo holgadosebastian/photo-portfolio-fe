@@ -10,8 +10,6 @@ import Grid from '../grid'
 const Hero = ({ image, title, subtitle, to, otherImages, className, ...props }) => {
   const Elem = to ? Link : 'div'
 
-  console.log(otherImages)
-
   return (
     <Elem
       to={to}

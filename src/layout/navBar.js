@@ -19,6 +19,9 @@ const NavBar = () => {
           <Link className="mx-2" to="/all-collections">
             Collections
           </Link>
+          <Link className="mx-2" to="/all-countries">
+            Countries
+          </Link>
         </div>
       </Container>
       

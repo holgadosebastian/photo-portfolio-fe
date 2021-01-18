@@ -1,10 +1,10 @@
 import gql from "graphql-tag";
 
-const COLLECTION_QUERY = gql`
-  query Collections($id: ID!) {
-    collection(id: $id) {
+const COUNTRY_QUERIES = gql`
+  query Countries($id: ID!) {
+    country(id: $id) {
       id
-      title
+      name
       handle
       image {
         url
@@ -20,4 +20,4 @@ const COLLECTION_QUERY = gql`
   }
 `;
 
-export default COLLECTION_QUERY;
+export default COUNTRY_QUERIES;

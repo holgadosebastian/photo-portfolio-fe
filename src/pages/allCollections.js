@@ -11,7 +11,6 @@ const AllCollections = () => {
     <Container>
       <Query query={ALL_COLLECTIONS_QUERY}>
         {({ data: { collections } }) => collections.map(collection => {
-          console.log(collection)
           const otherImages = collection.pictures.map(picture => picture.mainImage.url )
           
           return (
