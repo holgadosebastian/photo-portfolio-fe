@@ -1,10 +1,11 @@
 import React from 'react';
+import classnames from 'classnames';
 
 import GridColumn from './components/column'
 
-const Grid = ({ children }) => {
+const Grid = ({ className, children }) => {
   return (
-    <div className="flex flex-wrap">
+    <div className={classnames(className, 'flex', 'flex-wrap')}>
       {children}
     </div>
   )

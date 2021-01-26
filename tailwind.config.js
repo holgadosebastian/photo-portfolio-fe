@@ -71,7 +71,36 @@ module.exports = {
   },
   theme: {
     fontFamily: {
-      'sans': ['Noto Sans JP', 'ui-sans-serif', 'system-ui'],
+      display: [
+        'Source Sans Pro',
+        'system-ui',
+        'BlinkMacSystemFont',
+        '-apple-system',
+        'Segoe UI',
+        'Roboto',
+        'Oxygen',
+        'Ubuntu',
+        'Cantarell',
+        'Fira Sans',
+        'Droid Sans',
+        'Helvetica Neue',
+        'sans-serif',
+      ],
+      body: [
+        'Roboto',
+        'system-ui',
+        'BlinkMacSystemFont',
+        '-apple-system',
+        'Segoe UI',
+        'Roboto',
+        'Oxygen',
+        'Ubuntu',
+        'Cantarell',
+        'Fira Sans',
+        'Droid Sans',
+        'Helvetica Neue',
+        'sans-serif',
+      ],
     },
     extend: {
       spacing: {

@@ -1,7 +1,7 @@
 import React from 'react'
 import classnames from 'classnames'
 
-const Hdn = ({size, weight, centered, className, children, ...props}) => {
+const Hdn = ({size, weight, centered, display, className, children, ...props}) => {
   return (
     <p className={classnames(className, {
       'text-sm': size === 6,
@@ -12,6 +12,7 @@ const Hdn = ({size, weight, centered, className, children, ...props}) => {
       'text-5xl': size === 1,
       [`font-${weight}`]: weight,
       'text-center': centered,
+      'font-display': display,
     })} {...props}>
       {children}
     </p>
