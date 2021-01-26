@@ -4,7 +4,7 @@ import classnames from 'classnames'
 
 import Tab from './components/tab'
 
-const Tabs = ({ children, className, ...props}) => {
+const Tabs = ({ children, className, ...props }) => {
   return (
     <div className={classnames(className, 'flex')} {...props}>
       {children}
@@ -19,7 +19,7 @@ Tabs.defaultProps = {
 
 Tabs.propTypes = {
   children: PropTypes.node.isRequired,
-  className: PropTypes.string,
+  className: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
 }
 
 Tabs.Tab = Tab

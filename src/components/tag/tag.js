@@ -4,13 +4,16 @@ import { Link } from 'react-router-dom'
 
 import TagList from './components/tagList'
 
-const Tag = ({ id, className, children, ...props }) => {
+const Tag = ({ id, children, className, ...props }) => {
   return (
-    <Link to={`/tag/${id}`}
-      className={classnames(className,
+    <Link
+      to={`/tag/${id}`}
+      className={classnames(
+        className,
         'inline-block',
         'border-white',
-        'border-t border-r border-b border-l', 'border-solid',
+        'border-t border-r border-b border-l',
+        'border-solid',
         'rounded',
         'px-2',
         'text-xs',
@@ -22,6 +25,16 @@ const Tag = ({ id, className, children, ...props }) => {
       {children}
     </Link>
   )
+}
+
+Tag.defaultProps = {
+  className: undefined,
+}
+
+Tag.propTypes = {
+  id: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  className: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
 }
 
 Tag.List = TagList
