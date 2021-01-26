@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 const GridColumn = ({ span, className, children }) => {
@@ -6,7 +7,8 @@ const GridColumn = ({ span, className, children }) => {
     <div className={classnames(className, {
       'w-full': span.xs === 12,
       [`w-${span.xs}/12`]: span.xs !== 12,
-      [`sm:w-${span.md}/12`]: span.md,
+      [`sm:w-${span.sm}/12`]: span.sm,
+      [`md:w-${span.md}/12`]: span.md,
       [`lg:w-${span.lg}/12`]: span.lg,
     })}>
       {children}
@@ -16,6 +18,14 @@ const GridColumn = ({ span, className, children }) => {
 
 GridColumn.defaultProps = {
   span: { xs: 12 },
+}
+
+GridColumn.propTypes = {
+  span: PropTypes.shape({
+    xs: PropTypes.number.isRequired,
+    sm: PropTypes.number,
+    lg: PropTypes.number,
+  }),
 }
 
 export default GridColumn
