@@ -1,9 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-import GridColumn from './components/column'
+import ColumnsColumn from './components/column'
 
-const Grid = ({ children, className, ...props }) => {
+const Columns = ({ children, className, ...props }) => {
   return (
     <div className={classnames(className, 'flex', 'flex-wrap')} {...props}>
       {children}
@@ -11,15 +12,15 @@ const Grid = ({ children, className, ...props }) => {
   )
 }
 
-Grid.defaultProps = {
+Columns.defaultProps = {
   className: undefined,
 }
 
-Grid.propTypes = {
+Columns.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
 }
 
-Grid.Column = GridColumn
+Columns.Column = ColumnsColumn
 
-export default Grid
+export default Columns

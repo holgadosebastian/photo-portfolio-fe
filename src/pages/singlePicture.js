@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from "react-router";
+import { useParams } from 'react-router'
 import moment from 'moment'
 
 import Container from '../components/container'
@@ -8,14 +8,14 @@ import Hdn from '../components/heading'
 import Tag from '../components/tag'
 import Viewport from '../components/viewport'
 
-import Query from "../components/query";
-import PICTURE_QUERY from "../queries/picture/picture";
+import Query from '../components/query'
+import PICTURE_QUERY from '../queries/picture/picture'
 
 const SinglePicture = () => {
   let { id } = useParams()
 
   const getTakenMessage = (dateTaken, place, region) => {
-    if ( !dateTaken && !place && !region ) return null
+    if (!dateTaken && !place && !region) return null
 
     let message = 'Taken'
 
@@ -44,16 +44,21 @@ const SinglePicture = () => {
                 <Picture className="h-full w-full" image={mainImage.url} />
               </Viewport>
 
-              { tags && tags.length > 0 && (
+              {tags && tags.length > 0 && (
                 <Tag.List centered className="pt-4">
-                  { tags.map(tag => {
-                    return <Tag key={tag.id} id={tag.id}>{tag.title}</Tag>
+                  {tags.map((tag) => {
+                    return (
+                      <Tag key={tag.id} id={tag.id}>
+                        {tag.title}
+                      </Tag>
+                    )
                   })}
                 </Tag.List>
-                )
-              }
+              )}
 
-              <Hdn size={2} centered weight='bold' className="mt-4">{title}</Hdn>
+              <Hdn size={2} centered weight={700} className="mt-4">
+                {title}
+              </Hdn>
 
               <Hdn size={6} centered className="mt-3">
                 {getTakenMessage(dateTaken, place, region)}
@@ -62,7 +67,6 @@ const SinglePicture = () => {
           )
         }}
       </Query>
-
     </Container>
   )
 }

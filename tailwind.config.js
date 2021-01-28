@@ -1,5 +1,5 @@
 module.exports = {
-  purge: {    
+  purge: {
     content: [
       'src/**/*.js',
       'src/**/*.jsx',
@@ -21,19 +21,6 @@ module.exports = {
         'w-10/12',
         'w-11/12',
         'w-12/12',
-
-        'sm:w-1/12',
-        'sm:w-2/12',
-        'sm:w-3/12',
-        'sm:w-4/12',
-        'sm:w-5/12',
-        'sm:w-6/12',
-        'sm:w-7/12',
-        'sm:w-8/12',
-        'sm:w-9/12',
-        'sm:w-10/12',
-        'sm:w-11/12',
-        'sm:w-12/12',
 
         'md:w-1/12',
         'md:w-2/12',
@@ -61,28 +48,28 @@ module.exports = {
         'lg:w-11/12',
         'lg:w-12/12',
 
-        'font-100',
-        'font-200',
-        'font-300',
-        'font-400',
-        'font-500',
-        'font-600',
-        'font-700',
-        'font-100',
-
-        'font-thin',
-        'font-extralight',
-        'font-light',
-        'font-normal',
-        'font-medium',
-        'font-semibold',
-        'font-bold',
-        'font-extrabold',
-        'font-black',
+        'xl:w-1/12',
+        'xl:w-2/12',
+        'xl:w-3/12',
+        'xl:w-4/12',
+        'xl:w-5/12',
+        'xl:w-6/12',
+        'xl:w-7/12',
+        'xl:w-8/12',
+        'xl:w-9/12',
+        'xl:w-10/12',
+        'xl:w-11/12',
+        'xl:w-12/12',
       ],
     },
   },
   theme: {
+    screens: {
+      md: '768px',
+      lg: '992px',
+      xl: '1200px',
+    },
+
     fontFamily: {
       display: [
         'Source Sans Pro',
@@ -117,9 +104,9 @@ module.exports = {
     },
     extend: {
       spacing: {
-        '50p': "50%",
-        '100p': "100%",
-      }
+        '50p': '50%',
+        '100p': '100%',
+      },
     },
   },
   variants: {},
