@@ -1,4 +1,4 @@
-import gql from "graphql-tag";
+import gql from 'graphql-tag'
 
 const ALL_COLLECTIONS_QUERY = gql`
   query Collections {
@@ -9,13 +9,13 @@ const ALL_COLLECTIONS_QUERY = gql`
       image {
         url
       }
-      pictures(limit: 2) {
+      pictures(limit: 8) {
         mainImage {
           url
         }
       }
     }
   }
-`;
+`
 
-export default ALL_COLLECTIONS_QUERY;
+export default ALL_COLLECTIONS_QUERY

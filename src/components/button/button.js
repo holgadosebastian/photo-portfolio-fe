@@ -17,8 +17,9 @@ const Button = ({ color, to, children, className, ...props }) => {
         'px-4',
         'pointer',
         'leading-7',
+        'transition-colors',
         {
-          'border-white': color === 'ghost',
+          'border-white hover:bg-white hover:text-black': color === 'ghost',
         }
       )}
       {...props}
@@ -36,7 +37,7 @@ Button.defaultProps = {
 
 Button.propTypes = {
   color: PropTypes.oneOf(['ghost']),
-  to: null,
+  to: PropTypes.string,
   children: PropTypes.node.isRequired,
   className: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
 }
