@@ -18,6 +18,7 @@ const Button = ({ color, to, children, className, ...props }) => {
         'pointer',
         'leading-7',
         'transition-colors',
+        'cursor-pointer',
         {
           'border-white hover:bg-white hover:text-black': color === 'ghost',
         }
